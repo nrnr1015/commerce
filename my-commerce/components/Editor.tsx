@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import {useEffect, useState , useRef, Dispatch, SetStateAction} from 'react';
-import { Editor, EditorProps, EditorState } from 'react-draft-wysiwyg';
+import { EditorProps, EditorState } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import styled from 'styled-components';
 import Button from './Button';
@@ -27,11 +27,19 @@ export default function CustomEditor({
     return (
         <Wrapper>
             <Editor
+                readOnly={readonly}
                 editorState={editorState}
+                toolbarHidden={readonly}
                 toolbarClassName="toolbarClassName"
                 wrapperClassName="wrapperClassName"
                 editorClassName="editorClassName"
                 onEditorStateChange={onEditorStateChange}
+                toolbar = {{
+                    Options: ['inline', 'list', 'textAlign', 'link']
+                }}
+                localization={{
+                    locale: 'Ko'
+                }}
             />
             {
             !readonly && <Button onClick={onSave}>Save</Button>
