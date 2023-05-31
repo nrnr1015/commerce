@@ -5,7 +5,7 @@ import {useEffect, useState , useRef} from 'react';
 import { json } from "stream/consumers";
 export default function Home() {
 
-  const [products, setProducts] = useState<{id:string; name: string[]}[]>([]);
+  const [products, setProducts] = useState<{id:string; name: string; createdAt: string}[]>([]);
   // useEffect(()=> {
   //   fetch('/api/get-items')
   //   .then( (res) => res.json())
@@ -26,7 +26,9 @@ export default function Home() {
       <div>
           <p>product list</p>
           {products && products.map((item) => {
-            return <div key={item.id}>{item.name}</div>
+            return <div key={item.id}>{item.name}
+            <span>{item.createdAt}</span>
+            </div>
           })}
           {/* {products && products.map(item => 
             <div key={item.id}>
