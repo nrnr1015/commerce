@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.5",
-    "@prisma/client": "^4.14.1",
+    "@prisma/client": "^4.15.0",
     "@types/node": "20.2.3",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -32,6 +32,6 @@
   "devDependencies": {
     "@types/react-image-gallery": "^1.2.0",
     "@types/styled-components": "^5.1.26",
-    "prisma": "^4.14.1"
+    "prisma": "^4.15.0"
   }
 }

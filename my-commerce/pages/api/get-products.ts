@@ -6,11 +6,11 @@ const prisma = new PrismaClient()
 
 async function getProducts() {
   try {
-    const response = await prisma.user.findMany()  
+    const response = await prisma.products.findMany()  
     console.log(response);
     return response
   } catch (error) {
-    console.error(JSON.stringify(error));
+    console.error(error);
   }
 }
 
